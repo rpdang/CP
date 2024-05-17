@@ -5,5 +5,6 @@ public class Main {
         Reader r = new Reader();
         int n = r.nextInt();
         System.out.println(n);
+        r.close();
     }
 }
