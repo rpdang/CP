@@ -12,12 +12,11 @@ public class Main {
     private static StringTokenizer st;
 
     private static void solve() throws Exception {
-        int a = readInt(), b = readInt();
-        int sum = 0;
-        for (int i = 0; i < 7; i++) {
-            sum += i == 6 ? b : a;
+        int a = readInt();
+        while (a-- > 0) {
+            int x = readInt(), y = readInt();
+            out.println(x + y > 6 ? "YES" : "NO");
         }
-        out.println(sum);
     }
 
     public static void main(String[] args) throws Exception {
