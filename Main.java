@@ -21,16 +21,19 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        in = new BufferedReader(new InputStreamReader(System.in));
-        out = new PrintWriter(new OutputStreamWriter(System.out));
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                PrintWriter writer = new PrintWriter(new OutputStreamWriter(System.out))) {
+            in = reader;
+            out = writer;
 
-        long startTime = System.currentTimeMillis();
-        solve();
-        out.flush();
-        long endTime = System.currentTimeMillis();
+            long startTime = System.currentTimeMillis();
+            solve();
+            out.flush();
+            long endTime = System.currentTimeMillis();
 
-        // Comment this line in actual competition for cleaner output
-        System.err.println((endTime - startTime) + "ms");
+            // Comment this line in actual competition for cleaner output
+            System.err.println((endTime - startTime) + "ms");
+        }
     }
 
     static long readLong() throws IOException {
