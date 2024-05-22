@@ -12,11 +12,9 @@ public class Main {
     private static StringTokenizer st;
 
     private static void solve() throws Exception {
-        int a = readInt();
-        while (a-- > 0) {
-            int x = readInt(), y = readInt();
-            out.println(x + y > 6 ? "YES" : "NO");
-        }
+        String a = readLine(), b = readLine();
+        int val = a.compareToIgnoreCase(b);
+        out.println(val > 0 ? 1 : val < 0 ? -1 : 0);
     }
 
     public static void main(String[] args) throws Exception {
@@ -59,6 +57,24 @@ public class Main {
         while (st == null || !st.hasMoreTokens())
             st = new StringTokenizer(in.readLine().trim());
         return st.nextToken();
+    }
+
+    static int[] readArray(int n) throws IOException {
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = readInt();
+        }
+        return arr;
+    }
+
+    static int[][] readGrid(int m, int n) throws IOException {
+        int[][] grid = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                grid[i][j] = readInt();
+            }
+        }
+        return grid;
     }
 
     // Utilities
